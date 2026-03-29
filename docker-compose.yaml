@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    container_name: telegram-bot-video
+    restart: always                 # автоматически перезапускать контейнер
+    environment:
+      BOT_TOKEN: ${BOT_TOKEN}
+    volumes:
+      - .:/app          # монтируем текущую папку в /app контейнера
